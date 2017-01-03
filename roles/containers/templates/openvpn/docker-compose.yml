@@ -1,0 +1,26 @@
+version: '2'
+
+volumes:
+  openvpn_vol:
+    external:
+      name: "{{ datas_vol }}"
+
+networks:
+  legacy:
+
+services:
+  openvpn_server:
+    container_name: openvpn
+    image: kylemanna/openvpn
+    networks:
+      - legacy
+    volumes:
+      - openvpn_vol:/etc/openvpn
+    ports:
+      - "1194:1194/udp"
+      - 80:80                # used by HAProxy container
+      - 443:443              # used by HAProxy container
+      - 31422:31422          # used by HAProxy container
+    cap_add:
+      - NET_ADMIN
+    restart: always

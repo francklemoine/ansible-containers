@@ -1,0 +1,16 @@
+version: '2'
+
+volumes:
+  certificates:
+
+services:
+  letsencrypt_server:
+    container_name: letsencrypt
+    image: flem/letsencrypt-nginx
+    volumes:
+      - certificates:/etc/letsencrypt
+    environment:
+      - DOMAIN1={{ servername1 }}
+      - EMAIL1={{ serveradmin1 }}
+      - DOMAIN2={{ servername2 }}
+      - EMAIL2={{ serveradmin2 }}

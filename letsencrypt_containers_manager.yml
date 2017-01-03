@@ -1,0 +1,28 @@
+---
+
+# tags:
+#   config:                docker-compose -> configure
+#   up:                    docker-compose -> create and start containers
+#   start:                 docker-compose -> start containers
+#   stop:                  docker-compose -> stop containers
+#   remove:                docker-compose -> remove containers
+#   removeall:             docker-compose -> remove containers and volumes
+#
+#   systemd_config:        configure systemd to manage containers with docker-compose
+
+
+- name: letsencrypt (compose + systemd)
+  hosts: letsencrypt
+  vars:
+    project_name: letsencrypt
+    #
+    systemd_filename_source: model01.service
+    systemd_filename_target: letsencrypt.service
+    systemd_description: "Letsencrypt container"
+    #
+    docker_compose_conf_dir: /etc/docker-compose
+    docker_compose_files_dir: letsencrypt
+    docker_compose_filename: docker-compose.yml
+  roles:
+    - containers
+    - systemd

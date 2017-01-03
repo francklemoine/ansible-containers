@@ -1,0 +1,30 @@
+---
+
+# tags:
+#   config:                docker-compose -> configure
+#   up:                    docker-compose -> create and start containers
+#   start:                 docker-compose -> start containers
+#   stop:                  docker-compose -> stop containers
+#   remove:                docker-compose -> remove containers
+#   removeall:             docker-compose -> remove containers and volumes
+#
+#   systemd_config:        configure systemd to manage containers with docker-compose
+
+
+- name: openvpn (compose + systemd)
+  hosts: openvpn
+  vars:
+    project_name: openvpn
+    #
+    systemd_filename_source: model01.service
+    systemd_filename_target: openvpn.service
+    systemd_description: "Openvpn container"
+    #
+    docker_compose_conf_dir: /etc/docker-compose
+    docker_compose_files_dir: openvpn
+    docker_compose_filename: docker-compose.yml
+    #
+    datas_vol: "{{ ovpn_data }}"
+  roles:
+    - containers
+    - systemd

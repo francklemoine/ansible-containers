@@ -1,0 +1,36 @@
+---
+
+# tags:
+#   config:                docker-compose -> configure
+#   up:                    docker-compose -> create and start containers
+#   start:                 docker-compose -> start containers
+#   stop:                  docker-compose -> stop containers
+#   remove:                docker-compose -> remove containers
+#   removeall:             docker-compose -> remove containers and volumes
+#
+#   config_service:        configure systemd to manage containers with docker-compose
+#   start_service:         start service
+#   stop_service:          stop service
+#   restart_service:       restart service
+
+
+- name: hubic01 (compose + systemd)
+  hosts: hubic
+  vars:
+    project_name: hubic01
+    #
+    systemd_filename_source: model01.service
+    systemd_filename_target: hubic01.service
+    systemd_description: "Hubic01 container"
+    #
+    docker_compose_conf_dir: /etc/docker-compose
+    docker_compose_files_dir: hubic
+    docker_compose_filename: docker-compose.yml
+    #
+    datas_dir: "{{ hubic01_datas_dir }}"
+    config_dir: "{{ hubic01_config_dir }}"
+    email: "{{ hubic01_email }}"
+    password: "{{ hubic01_password }}"
+  roles:
+    - containers
+    - systemd

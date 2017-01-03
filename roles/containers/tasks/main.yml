@@ -1,0 +1,77 @@
+---
+
+- assert:
+    that:
+      - 'project_name            != ""'
+      - 'docker_compose_conf_dir != ""'
+      - 'docker_compose_filename != ""'
+  tags:
+    - config
+    - up
+    - start
+    - stop
+    - remove
+    - removeall
+
+
+- name: create docker-compose conf directory (/etc)
+  file:
+    path: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+    state: directory
+    owner: "root"
+    group: "root"
+    mode: 0700
+    recurse: yes
+  tags:
+    - config
+
+
+- name: copy docker-compose yaml conf file
+  template:
+    src: "../templates/{{ docker_compose_files_dir }}/{{ docker_compose_filename }}"
+    dest: "{{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }}"
+    owner: "root"
+    group: "root"
+    mode: 0600
+  tags:
+    - config
+
+
+- name: manage containers - up
+  command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' up -d"
+  args:
+    chdir: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+  tags:
+    - up
+
+
+- name: manage containers - start
+  command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' start"
+  args:
+    chdir: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+  tags:
+    - start
+
+
+- name: manage containers - stop
+  command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' stop"
+  args:
+    chdir: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+  tags:
+    - stop
+
+
+- name: manage containers - remove
+  command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' rm -f"
+  args:
+    chdir: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+  tags:
+    - remove
+
+
+- name: manage containers - remove (+volumes)
+  command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' rm -fv"
+  args:
+    chdir: "{{ docker_compose_conf_dir }}/{{ project_name }}"
+  tags:
+    - removeall

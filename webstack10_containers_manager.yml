@@ -1,0 +1,31 @@
+---
+
+# tags:
+#   config:                docker-compose -> configure
+#   up:                    docker-compose -> create and start containers
+#   start:                 docker-compose -> start containers
+#   stop:                  docker-compose -> stop containers
+#   remove:                docker-compose -> remove containers
+#   removeall:             docker-compose -> remove containers and volumes
+#
+#   config_service:        configure systemd to manage containers with docker-compose
+#   start_service:         start service
+#   stop_service:          stop service
+#   restart_service:       restart service
+
+
+- name: webstack10 (compose + systemd)
+  hosts: webstack10
+  vars:
+    project_name: webstack10
+    #
+    systemd_filename_source: model01.service
+    systemd_filename_target: webstack10.service
+    systemd_description: "Webstack10 containers (dokuwiki httpd + phpfpm)"
+    #
+    docker_compose_conf_dir: /etc/docker-compose
+    docker_compose_files_dir: webstack10
+    docker_compose_filename: docker-compose.yml
+  roles:
+    - containers
+    - systemd

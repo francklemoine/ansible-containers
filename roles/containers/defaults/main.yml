@@ -1,0 +1,19 @@
+---
+# default
+
+# specific HubiC 01
+hubic01_datas_dir: "/home/user/hubic_datas"
+hubic01_config_dir: "/home/user/hubiC"
+hubic01_email: "user@domain.tld"
+hubic01_password: "xxxxxxxx"
+
+
+servername1: "www.site.tld"
+serveradmin1: "admin@site.tld"
+servername2: "www.site2.tld"
+serveradmin2: "admin@site2.tld"
+
+
+ovpn_data: "ovpn-data"
+
+letsencrypt_data: "letsencrypt_certificates"

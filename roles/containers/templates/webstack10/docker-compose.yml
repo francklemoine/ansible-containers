@@ -1,0 +1,39 @@
+version: '2'
+
+volumes:
+  dokuwiki:
+
+networks:
+  net:
+  legacy:
+    external:
+      name: openvpn_legacy
+
+services:
+  phpfpm:
+    container_name: dokuwiki_phpfpm
+    image: flem/php5-fpm-dokuwiki
+    networks:
+      net:
+        aliases:
+          - phpfpmserver
+    volumes:
+      - dokuwiki:/opt/www
+
+  httpd:
+    container_name: dokuwiki_httpd
+    image: flem/httpd
+    networks:
+      net:
+        aliases:
+          - httpdserver
+      legacy:
+        aliases:
+          - wikiserver
+    depends_on:
+      - phpfpm
+    volumes:
+      - dokuwiki:/opt/www
+    environment:
+      - SERVERNAME1={{ servername1 }}
+      - SERVERADMIN1={{ serveradmin1 }}

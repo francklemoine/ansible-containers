@@ -1,0 +1,49 @@
+---
+
+- assert:
+    that:
+      - 'project_name            != ""'
+      - 'systemd_filename_source != ""'
+      - 'systemd_filename_target != ""'
+      - 'systemd_description     != ""'
+  tags:
+    - config_service
+    - start_service
+    - stop_service
+    - restart_service
+
+
+- name: copy systemd conf file
+  template:
+    src: "../templates/{{ systemd_filename_source }}"
+    dest: "/etc/systemd/system/{{ systemd_filename_target }}"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  tags:
+    - config_service
+
+
+- name: enable service
+  service: name={{ systemd_filename_target }} enabled=yes
+#  command: "systemctl enable /etc/systemd/system/{{ systemd_filename_target }}"
+  tags:
+    - config_service
+
+
+- name: start service
+  service: name={{ systemd_filename_target }} state=started
+  tags:
+    - start_service
+
+
+- name: stop service
+  service: name={{ systemd_filename_target }} state=stopped
+  tags:
+    - stop_service
+
+
+- name: restart service
+  service: name={{ systemd_filename_target }} state=restarted
+  tags:
+    - restart_service

@@ -1,0 +1,13 @@
+[Unit]
+Description={{ systemd_description }}
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/docker-compose -f /etc/docker-compose/{{ project_name }}/docker-compose.yml start
+ExecStop=/usr/local/bin/docker-compose -f /etc/docker-compose/{{ project_name }}/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target

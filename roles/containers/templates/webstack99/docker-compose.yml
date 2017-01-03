@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  letsencrypt_server:
+    image: flem/letsencrypt
+    environment:
+      - DOMAIN1={{ servername1 }}
+      - EMAIL1={{ serveradmin1 }}
+
+  reverse_proxy_webserver:
+    image: flem/httpd
+    external_links:
+      - webstack01_dokuwiki_webserver_1:myDokuwikiServer
+    volumes_from:
+      - letsencrypt_server
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - SERVERNAME1={{ servername1 }}
+      - SERVERADMIN1={{ serveradmin1 }}

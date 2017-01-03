@@ -1,0 +1,24 @@
+version: '2'
+
+volumes:
+  letsencrypt_volume:
+    external:
+      name: "{{ letsencrypt_data }}"
+
+services:
+  haproxy_server:
+    container_name: haproxy
+    image: haproxy:1.7.1-alpine
+    volumes:
+      - letsencrypt_volume:/etc/letsencrypt
+    network_mode: "container:openvpn"
+# defined within openvpn network
+#    ports:
+#      - 80:80
+#      - 443:443
+#      - 31422:31422
+    environment:
+      - DOMAIN1={{ servername1 }}
+      - EMAIL1={{ serveradmin1 }}
+      - DOMAIN2={{ servername2 }}
+      - EMAIL2={{ serveradmin2 }}

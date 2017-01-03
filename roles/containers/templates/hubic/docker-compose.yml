@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  hubic:
+    image: flem/rpi-hubic
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - {{ datas_dir }}:/hubiC
+      - {{ config_dir }}:/root/.config/hubiC
+    environment:
+      EMAIL: "{{ email }}"
+      PASSWORD: "{{ password }}"
