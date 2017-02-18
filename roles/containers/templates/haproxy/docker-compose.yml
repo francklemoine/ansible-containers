@@ -17,8 +17,3 @@ services:
 #      - 80:80
 #      - 443:443
 #      - 31422:31422
-    environment:
-      - DOMAIN1={{ servername1 }}
-      - EMAIL1={{ serveradmin1 }}
-      - DOMAIN2={{ servername2 }}
-      - EMAIL2={{ serveradmin2 }}

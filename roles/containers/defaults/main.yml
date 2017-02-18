@@ -12,8 +12,18 @@ servername1: "www.site.tld"
 serveradmin1: "admin@site.tld"
 servername2: "www.site2.tld"
 serveradmin2: "admin@site2.tld"
+servername3: "www.site3.tld"
+serveradmin3: "admin@site3.tld"
 
 
 ovpn_data: "ovpn-data"
 
+
 letsencrypt_data: "letsencrypt_certificates"
+
+
+madsonic_config_path: "/tmp/config"
+madsonic_media_path: "/tmp/media"
+
+domoticz_db_path: "/tmp/db"
+domoticz_backups_path: "/tmp/backups"

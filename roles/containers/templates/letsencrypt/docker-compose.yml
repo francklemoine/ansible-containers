@@ -14,3 +14,5 @@ services:
       - EMAIL1={{ serveradmin1 }}
       - DOMAIN2={{ servername2 }}
       - EMAIL2={{ serveradmin2 }}
+      - DOMAIN3={{ servername3 }}
+      - EMAIL3={{ serveradmin3 }}

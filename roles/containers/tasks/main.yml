@@ -28,7 +28,7 @@
 
 - name: copy docker-compose yaml conf file
   template:
-    src: "../templates/{{ docker_compose_files_dir }}/{{ docker_compose_filename }}"
+    src: "../templates/{{ docker_compose_files_dir }}/{{ docker_compose_filename_source }}"
     dest: "{{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }}"
     owner: "root"
     group: "root"

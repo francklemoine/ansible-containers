@@ -1,0 +1,23 @@
+version: '2'
+
+networks:
+  legacy:
+    external:
+      name: openvpn_legacy
+
+services:
+  madsonic:
+    container_name: madsonic
+    image: madsonic/debian-madsonic
+    networks:
+      legacy:
+        aliases:
+          - musicserver
+    restart: always
+    volumes:
+      - "{{ madsonic_media_path }}:/media"
+      - "{{ madsonic_config_path }}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - CONTEXT_PATH=/
+      - SSL=no

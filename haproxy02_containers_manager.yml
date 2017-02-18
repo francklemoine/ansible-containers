@@ -14,18 +14,18 @@
 #   restart_service:       restart service
 
 
-- name: webstack99 (compose + systemd)
-  hosts: webstack99
+- name: haproxy (compose + systemd)
+  hosts: haproxy02
   vars:
-    project_name: webstack99
+    project_name: haproxy
     #
     systemd_filename_source: model01.service
-    systemd_filename_target: webstack99.service
-    systemd_description: "Webstack99 container"
+    systemd_filename_target: haproxy.service
+    systemd_description: "HAProxy container"
     #
     docker_compose_conf_dir: /etc/docker-compose
-    docker_compose_files_dir: webstack99
-    docker_compose_filename_source: docker-compose.yml
+    docker_compose_files_dir: haproxy
+    docker_compose_filename_source: docker-compose02.yml
     docker_compose_filename: docker-compose.yml
   roles:
     - containers

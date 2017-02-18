@@ -25,6 +25,7 @@
     #
     docker_compose_conf_dir: /etc/docker-compose
     docker_compose_files_dir: haproxy
+    docker_compose_filename_source: docker-compose.yml
     docker_compose_filename: docker-compose.yml
   roles:
     - containers

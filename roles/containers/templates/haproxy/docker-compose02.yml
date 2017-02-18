@@ -1,0 +1,17 @@
+version: '2'
+
+networks:
+  domoticz_default:
+    external: true
+
+services:
+  haproxy_server:
+    container_name: haproxy
+    image: hypriot/rpi-haproxy
+    external_links:
+      - domoticserver
+    networks:
+      - default
+      - domoticz_default
+    ports:
+      - 80:80

@@ -42,7 +42,7 @@ Letsencrypt
 
   * Run a temp letsencrypt container to create certificates for the first time (nginx use)
 
-	`ansible -i hosts letsencrypt -u user01 -m command -a "docker run --rm -v letsencrypt_certificates:/etc/letsencrypt -p 80:80 -e DOMAIN1=xxxx -e EMAIL1=xxxx -e DOMAIN2=xxxx -e EMAIL2=xxxx flem/letsencrypt-nginx configure`
+	`ansible -i hosts letsencrypt -u user01 -m command -a "docker run --rm -v letsencrypt_certificates:/etc/letsencrypt -p 80:80 -e DOMAIN1=xxxx -e EMAIL1=xxxx -e DOMAIN2=xxxx -e EMAIL2=xxxx flem/letsencrypt-nginx configure"`
 
 
 1. Containers
@@ -179,3 +179,57 @@ Hubic
 	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service hubic_containers_manager.yml`
 	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service hubic_containers_manager.yml`
 	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service hubic_containers_manager.yml`
+
+
+
+
+Madsonic
+--------
+
+1. Containers
+
+   * run the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up madsonic_containers_manager.yml`
+
+   * start the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags start madsonic_containers_manager.yml`
+
+   * stop the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags stop madsonic_containers_manager.yml`
+
+2. Systemd service
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service madsonic_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service madsonic_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service madsonic_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service madsonic_containers_manager.yml`
+
+
+
+
+Domoticz
+--------
+
+1. Containers
+
+   * run the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up domoticz_containers_manager.yml`
+
+   * start the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags start domoticz_containers_manager.yml`
+
+   * stop the containers
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags stop domoticz_containers_manager.yml`
+
+2. Systemd service
+
+	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service domoticz_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service domoticz_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service domoticz_containers_manager.yml`
+	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service domoticz_containers_manager.yml`

@@ -8,25 +8,25 @@
 #   remove:                docker-compose -> remove containers
 #   removeall:             docker-compose -> remove containers and volumes
 #
-#   config_service:        configure systemd to manage containers with docker-compose
-#   start_service:         start service
-#   stop_service:          stop service
-#   restart_service:       restart service
+#   systemd_config:        configure systemd to manage containers with docker-compose
 
 
-- name: webstack99 (compose + systemd)
-  hosts: webstack99
+- name: domoticz
+  hosts: domoticz
   vars:
-    project_name: webstack99
+    project_name: domoticz
     #
     systemd_filename_source: model01.service
-    systemd_filename_target: webstack99.service
-    systemd_description: "Webstack99 container"
+    systemd_filename_target: domoticz.service
+    systemd_description: "Domoticz container"
     #
     docker_compose_conf_dir: /etc/docker-compose
-    docker_compose_files_dir: webstack99
+    docker_compose_files_dir: domoticz
     docker_compose_filename_source: docker-compose.yml
     docker_compose_filename: docker-compose.yml
+    #
+    db_dir: "{{ domoticz_db_path }}"
+    backups_dir: "{{ domoticz_backups_path }}"
   roles:
     - containers
     - systemd

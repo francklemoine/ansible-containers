@@ -1,0 +1,18 @@
+version: '2'
+
+networks:
+  default:
+
+services:
+  domoticz:
+    container_name: domoticz
+    image: flem/rpi-domoticz
+    networks:
+      default:
+        aliases:
+          - domoticserver
+    restart: always
+    volumes:
+      - "{{ db_dir }}:/opt/domoticz/db:rw"
+      - "{{ backups_dir }}:/opt/domoticz/backups:rw"
+      - "/etc/localtime:/etc/localtime:ro"

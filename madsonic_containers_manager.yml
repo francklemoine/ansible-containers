@@ -8,25 +8,24 @@
 #   remove:                docker-compose -> remove containers
 #   removeall:             docker-compose -> remove containers and volumes
 #
-#   config_service:        configure systemd to manage containers with docker-compose
-#   start_service:         start service
-#   stop_service:          stop service
-#   restart_service:       restart service
+#   systemd_config:        configure systemd to manage containers with docker-compose
 
 
-- name: webstack99 (compose + systemd)
-  hosts: webstack99
+- name: madsonic
+  hosts: madsonic
   vars:
-    project_name: webstack99
+    project_name: madsonic
     #
     systemd_filename_source: model01.service
-    systemd_filename_target: webstack99.service
-    systemd_description: "Webstack99 container"
+    systemd_filename_target: madsonic.service
+    systemd_description: "Madsonic container"
     #
     docker_compose_conf_dir: /etc/docker-compose
-    docker_compose_files_dir: webstack99
+    docker_compose_files_dir: madsonic
     docker_compose_filename_source: docker-compose.yml
     docker_compose_filename: docker-compose.yml
+    #
+    datas_vol: "{{ madsonic_data }}"
   roles:
     - containers
     - systemd
