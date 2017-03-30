@@ -8,7 +8,7 @@ volumes:
 services:
   haproxy_server:
     container_name: haproxy
-    image: haproxy:1.7.1-alpine
+    image: haproxy:1.7.3-alpine
     volumes:
       - letsencrypt_volume:/etc/letsencrypt
     network_mode: "container:openvpn"

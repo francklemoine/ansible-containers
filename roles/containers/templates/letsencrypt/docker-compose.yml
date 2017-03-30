@@ -3,10 +3,20 @@ version: '2'
 volumes:
   certificates:
 
+networks:
+  legacy:
+    external:
+      name: openvpn_legacy
+
 services:
   letsencrypt_server:
     container_name: letsencrypt
     image: flem/letsencrypt-nginx
+    networks:
+      legacy:
+        aliases:
+          - letsencryptserver
+    restart: always
     volumes:
       - certificates:/etc/letsencrypt
     environment:
