@@ -11,6 +11,8 @@ services:
       default:
         aliases:
           - domoticserver
+    ports:
+      - 8080:8080
     restart: always
     volumes:
       - "{{ db_dir }}:/opt/domoticz/db:rw"
