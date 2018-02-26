@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 volumes:
   certificates:
@@ -16,7 +16,7 @@ services:
       legacy:
         aliases:
           - letsencryptserver
-    restart: always
+#    restart: always
     volumes:
       - certificates:/etc/letsencrypt
     environment:

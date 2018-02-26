@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+  legacy:
+    external:
+      name: openvpn_legacy
+
+services:
+  airsonic:
+    container_name: airsonic
+    image: airsonic/airsonic
+    networks:
+      legacy:
+        aliases:
+          - airsonicserver
+    volumes:
+      - "{{ airsonic_data_path }}:/airsonic/data"
+      - "{{ airsonic_music_path }}:/airsonic/music"
+      - "{{ airsonic_playlists_path }}:/airsonic/playlists"
+      - "{{ airsonic_podcasts_path }}:/airsonic/podcasts"
+      - "/etc/localtime:/etc/localtime:ro"

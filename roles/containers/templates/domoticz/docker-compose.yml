@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 networks:
   default:
@@ -13,7 +13,7 @@ services:
           - domoticserver
     ports:
       - 8080:8080
-    restart: always
+#    restart: always
     volumes:
       - "{{ db_dir }}:/opt/domoticz/db:rw"
       - "{{ backups_dir }}:/opt/domoticz/backups:rw"

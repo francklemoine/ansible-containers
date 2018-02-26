@@ -8,22 +8,22 @@ Openvpn
 
    * run the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up openvpn_containers_manager.yml`
 
    * start the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start openvpn_containers_manager.yml`
 
    * stop the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop openvpn_containers_manager.yml`
 
   2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service openvpn_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service openvpn_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service openvpn_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service openvpn_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service openvpn_containers_manager.yml`
 
 
 
@@ -49,22 +49,22 @@ Letsencrypt
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up letsencrypt_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start letsencrypt_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop letsencrypt_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service letsencrypt_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service letsencrypt_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service letsencrypt_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service letsencrypt_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service letsencrypt_containers_manager.yml`
 
 
 
@@ -78,22 +78,22 @@ Dokuwiki (webstack10)
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up webstack10_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start webstack10_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop webstack10_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service webstack10_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service webstack10_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service webstack10_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service webstack10_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service webstack10_containers_manager.yml`
 
 
 
@@ -107,22 +107,22 @@ Httpd proxy (webstack99) - obsolete since HAProxy
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up webstack99_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start webstack99_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop webstack99_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service webstack99_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service webstack99_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service webstack99_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service webstack99_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service webstack99_containers_manager.yml`
 
 
 
@@ -136,22 +136,22 @@ HAProxy
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up haproxy_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start haproxy_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop haproxy_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service haproxy_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service haproxy_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service haproxy_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service haproxy_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service haproxy_containers_manager.yml`
 
 
 
@@ -163,22 +163,22 @@ Hubic
 
    * run the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up hubic_containers_manager.yml`
 
    * start the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start hubic_containers_manager.yml`
 
    * stop the container
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop hubic_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service hubic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service hubic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service hubic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service hubic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service hubic_containers_manager.yml`
 
 
 
@@ -190,22 +190,49 @@ Madsonic
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up madsonic_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start madsonic_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop madsonic_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service madsonic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service madsonic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service madsonic_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service madsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service madsonic_containers_manager.yml`
+
+
+
+
+Airsonic
+--------
+
+1. Containers
+
+   * run the containers
+
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up airsonic_containers_manager.yml`
+
+   * start the containers
+
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start airsonic_containers_manager.yml`
+
+   * stop the containers
+
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop airsonic_containers_manager.yml`
+
+2. Systemd service
+
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service airsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service airsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service airsonic_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service airsonic_containers_manager.yml`
 
 
 
@@ -217,19 +244,19 @@ Domoticz
 
    * run the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config,up domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config,up domoticz_containers_manager.yml`
 
    * start the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start domoticz_containers_manager.yml`
 
    * stop the containers
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop domoticz_containers_manager.yml`
 
 2. Systemd service
 
-	`ansible-playbook -i hosts --become --ask-become-pass --tags config_service domoticz_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags start_service domoticz_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags stop_service domoticz_containers_manager.yml`
-	`ansible-playbook -i hosts --become --ask-become-pass --tags restart_service domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags config_service domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags start_service domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags stop_service domoticz_containers_manager.yml`
+	`ansible-playbook [-i hosts] [--become] [--ask-become-pass] --tags restart_service domoticz_containers_manager.yml`

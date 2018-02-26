@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 volumes:
   openvpn_vol:
@@ -23,4 +23,4 @@ services:
       - 31422:31422          # used by HAProxy container
     cap_add:
       - NET_ADMIN
-    restart: always
+#    restart: always

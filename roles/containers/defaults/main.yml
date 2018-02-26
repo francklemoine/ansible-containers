@@ -25,5 +25,12 @@ letsencrypt_data: "letsencrypt_certificates"
 madsonic_config_path: "/tmp/config"
 madsonic_media_path: "/tmp/media"
 
+
+airsonic_data_path: "/tmp/data"
+airsonic_music_path: "/tmp/music"
+airsonic_playlists_path: "/tmp/playlists"
+airsonic_podcasts_path: "/tmp/podcasts"
+
+
 domoticz_db_path: "/tmp/db"
 domoticz_backups_path: "/tmp/backups"
