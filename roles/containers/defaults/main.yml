@@ -34,3 +34,20 @@ airsonic_podcasts_path: "/tmp/podcasts"
 
 domoticz_db_path: "/tmp/db"
 domoticz_backups_path: "/tmp/backups"
+
+
+haproxy_conf_files:
+  - { src: 'haproxy.j2', dest: 'haproxy.cfg' }
+
+
+optional_files:
+  prometheus:
+    project: monitoring
+    directory: /etc/docker-compose/monitoring/docker/prometheus
+    duid: 0
+    dgid: 0
+    dmod: 755
+    file: prometheus.yml
+    fuid: 0
+    fgid: 0
+    fmod: 644

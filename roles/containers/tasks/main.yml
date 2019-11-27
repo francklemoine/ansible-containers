@@ -37,6 +37,33 @@
     - config
 
 
+- name: create optional directories
+  file:
+    path: "{{  item.value.directory }}"
+    state: directory
+    owner: "{{ item.value.duid }}"
+    group: "{{ item.value.dgid }}"
+    mode: "{{ item.value.dmod }}"
+    recurse: yes
+  when: item.value.project == "{{ vars['project_name'] }}"
+  with_dict: "{{ optional_files | default({}) }}"
+  tags:
+    - config
+
+
+- name: copy optional files
+  template:
+    src: "{{ role_path }}/templates/{{ project_name }}/{{ item.value.file }}"
+    dest: "{{  item.value.directory }}"
+    owner: "{{ item.value.fuid }}"
+    group: "{{ item.value.fgid }}"
+    mode: "{{ item.value.fmod }}"
+  when: item.value.project == "{{ vars['project_name'] }}"
+  with_dict: "{{ optional_files | default({}) }}"
+  tags:
+    - config
+
+
 - name: manage containers - up
   command: "docker-compose -f {{ docker_compose_conf_dir }}/{{ project_name }}/{{ docker_compose_filename }} -p '{{ project_name }}' up -d"
   args:
